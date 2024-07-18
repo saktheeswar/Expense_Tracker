@@ -15,19 +15,51 @@
       </ul>
       <main>
         <header>
-            <div>
-                <h5>Income</h5>
-                <span id="Income">₹0.00</span>
-            </div>
-            <div>
-                <h5>Expense</h5>
-                <span id="Expense">₹0.00</span>
-            </div>
-            <div>
-                <h5>Balance</h5>
+            <section class="Income section" id="Income">
+                <h2 class="section-title">Income</h2>
+                <div>
+                    <h5>Income</h5>
+                    <span id="Income">₹0.00</span>
+                </div>
+            </section>
+            <section class="Expense section" id="Expense">
+                <h2 class="section-title">Expense</h2>
+                <div>
+                    <h5>Expense</h5>
+                    <span id="Expense">₹0.00</span>
+                </div>
+            </section>
+            <section class="Balance section" id="Balance">
+                <h2 class="section-title">Balance</h2>
+                <div>
+                    <h5>Balance</h5>
                 <span id="Balance">₹0.00</span>
-            </div>
-        </header>
+                </div>
+            </section> 
+    </header>
+        <section>
+            <button type="Add Transaction">Add Transaction</button>
+            <button type="Delete Transaction">Delete Transaction</button>
+            <h3>Add Transaction</h3>
+            <form id="transactionForm">
+                <div>
+                    <label for="name">Category</label>
+                    <input type="text" name="name" placeholder="Enter the category type" required />
+                </div>
+                <div>
+                    <label for="amount">Amount</label>
+                    <input type="number" name="amount" value="0" min="0.01" step="0.01" required />
+                </div>
+                <div>
+                    <label for="date">Date</label>
+                    <input type="date" name="date" required />
+                </div>
+                <div>
+                    <textarea name="description" cols="30" rows="4" form="usrform" placeholder="Description"></textarea>
+                </div>
+                <button type="submit">Add</button>
+            </form>
+        </section>
       </main>
     <script src="../js/script.js"></script>
 </body>
