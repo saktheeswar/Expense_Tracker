@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
-    <h1>Expense Tracker</h1>
+    <h1>Expense Tracker ₹</h1>
     <ul>
-        <li><a href="#income">Income</a></li>
-        <li><a href="#expense">Expense</a></li>
+        <li><a href="income.html">Income</a></li>
+        <li><a href="addtransaction.html">Expense</a></li>
         <li><a href="#balance">Balance</a></li>
-      </ul>
+    </ul>
+    
       <main>
         <header>
             <section class="Income section" id="Income">
@@ -22,6 +23,7 @@
                     <span id="Income">₹0.00</span>
                 </div>
             </section>
+            
             <section class="Expense section" id="Expense">
                 <h2 class="section-title">Expense</h2>
                 <div>
@@ -36,29 +38,13 @@
                 <span id="Balance">₹0.00</span>
                 </div>
             </section> 
-    </header>
+        </header>
         <section>
-            <button type="Add Transaction">Add Transaction</button>
-            <button type="Delete Transaction">Delete Transaction</button>
-            <h3>Add Transaction</h3>
-            <form id="transactionForm">
-                <div>
-                    <label for="name">Category</label>
-                    <input type="text" name="name" placeholder="Enter the category type" required />
-                </div>
-                <div>
-                    <label for="amount">Amount</label>
-                    <input type="number" name="amount" value="0" min="0.01" step="0.01" required />
-                </div>
-                <div>
-                    <label for="date">Date</label>
-                    <input type="date" name="date" required />
-                </div>
-                <div>
-                    <textarea name="description" cols="30" rows="4" form="usrform" placeholder="Description"></textarea>
-                </div>
-                <button type="submit">Add</button>
-            </form>
+            <button id="addTransactionBtn"> <a href="addtransaction.html"> Add Transaction</a></button>
+            
+            <button id="viewTransactionsBtn"> <a href="viewtransaction.html"> View Transactions</a></button>
+            
+            
         </section>
       </main>
     <script src="../js/script.js"></script>
