@@ -5,20 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Income</title>
     <link rel="stylesheet" href="../css/style.css"/>
+    <script>
+        // Function to be executed after DOM content is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const addIncomeButton = document.getElementById('addIncomeButton');
+
+            addIncomeButton.addEventListener('click', () => {
+                const incomeInput = document.getElementById('incomeInput').value;
+
+                // Check if income input is valid
+                if (incomeInput === '' || parseFloat(incomeInput) <= 0) {
+                    alert('Please enter a valid amount.');
+                    return;
+                }
+
+                const incomeData = { income: incomeInput };
+                localStorage.setItem('incomeData', JSON.stringify(incomeData));
+
+                // Redirect to another page
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
 </head>
 <body>
-    <form id="incomeForm">
-        <section class="Income section" id="Income">
-            <h2 class="section-title">Income</h2>
-            <div>
-                <h5>Income</h5>
-                <input type="number" id="incomeInput" name="amount" value="0" min="0.01" step="0.01" required />
-                <span id="Income">₹0.00</span>
-                <button type="button" onclick="addIncome()">Add</button>
-            </div>
-        </section>
-    </form>
-    
-    <script src="../js/script.js"></script>
+    <section class="Income section" id="Income">
+        <h2 class="section-title">Income</h2>
+        <div>
+            <h5>Income</h5>
+            <input type="number" id="incomeInput" name="amount" value="0" min="0.01" step="0.01" required />
+            <button type="button" id="addIncomeButton">Add</button>
+        </div>
+    </section>
 </body>
 </html>
